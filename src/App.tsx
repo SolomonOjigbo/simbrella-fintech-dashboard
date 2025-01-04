@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -7,8 +7,16 @@ import LoanManagement from './pages/LoanManagement';
 import TransactionHistory from './pages/TransactionHistory';
 import Dashboard from './pages/Dashboard';
 import UserOverview from './pages/UserOverview';
+import { fetchUser } from './redux/userSlice';
+import { useAppDispatch } from './redux/hooks';
 
 function App() {
+  const dispatch = useAppDispatch();
+const id = "1"
+  useEffect(() => {
+    dispatch(fetchUser(id));
+  }, [dispatch]);
+
   return (
     <Router>
     <Routes>

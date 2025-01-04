@@ -4,11 +4,7 @@ import { fetchTransactions } from "../services/api";
 import DashboardLayout from "../layouts/DashboardLayout";
 
 const TransactionHistory = () => {
-  const [transactions, setTransactions] = useState<any[]>([]);
   
-    useEffect(() => {
-      fetchTransactions().then((response) => setTransactions(response.data));
-    }, []);
   
 
   return (
@@ -16,7 +12,7 @@ const TransactionHistory = () => {
     <div className="p-4 bg-white shadow rounded">
       <h2 className="text-xl font-bold">Transaction History</h2>
 
-      <TransactionTable transactions={transactions} />
+      <TransactionTable  />
      
     </div>
     </DashboardLayout>

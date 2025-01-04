@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { fetchTransactions } from "../services/api";
 
-const TransactionTable = ({transactions}) => {
+
+const TransactionTable = () => {
 
   return (
     <div className="p-4 bg-white shadow rounded">
-      <h2 className="text-xl font-bold">Transaction History</h2>
+      <h2 className="text-xl font-bold">All Transactions</h2>
       {/* {Transactions Table} */}
-      Transactions Table
+      
 
-      {transactions}
+      
     </div>
   );
 };
