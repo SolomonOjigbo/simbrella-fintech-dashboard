@@ -1,19 +1,14 @@
 import {  useAppDispatch, useAppSelector } from '../redux/hooks';
 
 import DashboardLayout from "../layouts/DashboardLayout";
-import { useEffect } from 'react';
-import { fetchUser } from '../redux/userSlice';
+
 
 
 const UserOverview = () => {
 
 
   const { user, status, error } = useAppSelector((state) => state.user);
- const dispatch = useAppDispatch();
-const id = "1"
-  useEffect(() => {
-    dispatch(fetchUser(id));
-  }, [dispatch]);
+ 
  
 
   if (status === 'loading') return <p>Loading...</p>;

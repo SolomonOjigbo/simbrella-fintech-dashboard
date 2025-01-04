@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import DashboardLayout from '../layouts/DashboardLayout'
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { fetchUser} from '../redux/userSlice';
-import { Modal } from '@mui/material';
+import { Button, Modal } from '@mui/material';
+import LoansTable from '../components/loansTable';
 
 const LoanManagement = () => {
-    const dispatch = useAppDispatch();
-    const { user, status, error } = useAppSelector((state) => state.user);
+    
     const [isOpen, setIsOpen ] = useState(false);
-  
-    useEffect(() => {
-      dispatch(fetchUser());
-    }, [dispatch]);
+ 
   return (
+    <>
+
+   
     <DashboardLayout>
 
-<div className="p-4 bg-white shadow rounded">
+    <div>
       <h2 className="text-xl font-bold">Loan Management</h2>
 
+      <Button variant="contained" color='info'>Request For Loan</Button>
 
-      
+    <LoansTable />
+
+
+
 
       <Modal open={isOpen} onClose={()=> setIsOpen(false)} >
 
@@ -48,6 +51,7 @@ const LoanManagement = () => {
       </Modal>
     </div>
     </DashboardLayout>
+    </>
   )
 }
 
