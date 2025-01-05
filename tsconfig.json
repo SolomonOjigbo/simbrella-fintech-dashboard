@@ -2,6 +2,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
     "isolatedModules": true,
     "moduleResolution": "node",
     "target": "ES6",
