@@ -6,8 +6,8 @@
 
 const config = {
 
-  preset: 'vite-jest',
-  setupFiles: ['./setupTests.js'],
+  preset: 'vitest',
+  setupFiles: ['./src/setupTests.ts'],
     
     transform: {
       '^.+\\.(ts|tsx)$': 'ts-jest',

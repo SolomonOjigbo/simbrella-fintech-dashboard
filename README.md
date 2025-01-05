@@ -1,50 +1,71 @@
-# React + TypeScript + Vite
+## Fintech Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Overview
+The Fintech Dashboard is a modern web application designed for financial tracking, analytics, and management. Built using React, this dashboard provides features for users like managing loans, viewing account balancce and user profile, tracking transactions, and more. It integrates with various backend services for data storage and processing, ensuring a seamless user experience for financial professionals and businesses.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+# Features
+Loan Management: request for loans and view existing loan details including amount, tenure, and purpose.
+Data Grids: Utilize MUI DataGrid for organizing and managing data such as loans and transactions.
+Responsive Design: Styling was done using tailwindCSS and Optimized for desktop and mobile views.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Table of Contents
+Installation
+Usage
+Development
+Testing
+Contributing
 
-- Configure the top-level `parserOptions` property like this:
+# Installation
+Prerequisites
+Before setting up the project, ensure that you have the following installed:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Node.js (version 16 or higher)
+npm (Node Package Manager) or yarn
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+# Steps
+1. Clone the repository:
+git clone https://github.com/SolomonOjigbo/simbrella-fintech-dashboard.git
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. Navigate to the project directory:
+cd simbrella-fintech-dashboard
+
+3. Install dependencies:
+run npm install or yarn install
+
+
+# Usage
+To start the development server: npm run dev or yarn dev
+
+
+# Key Development Tools
+React with TypeScript: For building user interfaces with reusable components.
+Re
+Redux: For state management across components.
+MUI (Material-UI): For UI components like buttons, grids, toolbars, etc.
+● Styling: Styling was implemented using Tailwind CSS.
+● API Integration:
+○ Mock REST API from mockapi.io was used to fetch and update user and transaction data.
+● Routing: React Router dom was used for navigation between different sections of the dashboard.
+● Testing: The project uses Vitest and React Testing Library for unit and integration tests.
+To run the tests, use: npm run test.
+
+# Contributing
+We welcome contributions to improve the Fintech Dashboard. Here’s how you can help:
+
+Fork the repository.
+Create a new branch for your feature or fix.
+Commit your changes.
+Push to your forked repository.
+Submit a pull request.
+Please make sure your code follows the ESLint guidelines, and all tests pass before submitting a pull request.
+
+
+
+
+
+
+
+
