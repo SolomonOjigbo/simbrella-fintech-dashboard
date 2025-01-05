@@ -1,17 +1,15 @@
 {
   "compilerOptions": {
-    // "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-     "incremental": true,
+    "incremental": true,
     "tsBuildInfoFile": "./tsbuildinfo",
 
     /* Bundler mode */
-    "moduleResolution": "node",
-    // "allowImportingTsExtensions": true,
+    "moduleResolution": "node", // Ensures Node.js-style resolution
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
@@ -21,8 +19,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    // "noUncheckedSideEffectImports": true
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "vite.config.ts"]
+  "include": ["src", "vite.config.ts"], // Explicitly include Vite config
+  "exclude": ["node_modules"]
 }

@@ -10,10 +10,8 @@ import {
   People,
   MonetizationOn,
   AccountBalance,
-
 } from "@mui/icons-material";
 import { Link } from "react-router-dom"; // Import Link for navigation
-
 
 const Sidebar = ({
   isOpen,
@@ -22,13 +20,12 @@ const Sidebar = ({
 }: {
   isOpen: boolean;
   isMobile: boolean;
-  onClose: () => void;
+  onClose: (event: {}, reason: "backdropClick" | "escapeKeyDown") => void;
 }) => {
   const collapsedWidth = "60px";
   const expandedWidth = "240px";
 
   const menuItems = [
-    
     { title: "User Overview", icon: <People />, link: "/" },
     { title: "Loan Management", icon: <AccountBalance />, link: "/loan-management" },
     { title: "Transaction History", icon: <MonetizationOn />, link: "/transaction-history" },
@@ -38,7 +35,7 @@ const Sidebar = ({
     <Drawer
       variant={isMobile ? "temporary" : "persistent"}
       open={isOpen || !isMobile}
-      onClose={onClose || isMobile}
+      onClose={isMobile ? onClose : undefined} // Pass onClose only when mobile
       sx={{
         flexShrink: 0,
         "& .MuiDrawer-paper": {
@@ -64,7 +61,7 @@ const Sidebar = ({
           <ListItemButton
             key={index}
             component={Link}
-            to={item.link} 
+            to={item.link}
             sx={{
               display: "flex",
               alignItems: "center",

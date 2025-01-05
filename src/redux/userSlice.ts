@@ -13,7 +13,7 @@ interface User {
   loans: any[];
 }
 
-interface UserState {
+export interface UserState {
   user: User | null;
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;

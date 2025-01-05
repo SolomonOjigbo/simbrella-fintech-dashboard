@@ -1,23 +1,25 @@
 {
   "compilerOptions": {
     "strict": false,
-    "target": "esnext",
-    "module": "Nodenext",
-    "moduleResolution": "nodenext",  // Ensures Vite modules are resolved correctly
-    "jsx": "react-jsx",  // For React 17+ JSX Transform
-    "esModuleInterop": true,  // Allows importing CommonJS modules
-    "skipLibCheck": true,  // Skip type checking for declaration files
-    "types": ["vite/client", "vitest/globals"],
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "node", // Resolves modules like Node.js
+    "target": "ESNext",
+    "jsx": "react-jsx", // React 17+ JSX Transform
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["vite/client", "vitest/globals"], 
     "lib": ["dom", "esnext"],
     "noImplicitAny": false,
     "noImplicitThis": false,
     "strictNullChecks": false,
     "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "noUnusedParameters": false,
+    "paths": {
+      "@redux/*": ["./src/redux/*"]
+    },
   },
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "references": [],
+  "include": ["vite.config.ts", "src/**/*"], 
+  "exclude": ["node_modules"]
 }
