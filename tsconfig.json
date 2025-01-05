@@ -1,4 +1,12 @@
 {
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "target": "ES6",
+    "module": "commonjs"
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
