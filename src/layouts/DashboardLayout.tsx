@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import { Box, CssBaseline, Toolbar, useMediaQuery } from "@mui/material";
+import { CssBaseline, Toolbar, useMediaQuery } from "@mui/material";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -10,12 +10,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <section>
       <CssBaseline />
-      <div className="flex h-screen">
+      <div className="flex h-screen w-full">
         {/* Navbar */}
         <Navbar onToggleSidebar={() => setSidebarOpen((prev) => !prev)} />
 
         {/* Sidebar */}
-        {!isMobile && (
+        {
           <Sidebar
             isOpen={isSidebarOpen}
             isMobile={isMobile}
@@ -24,14 +24,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               isSidebarOpen ? "w-60" : "w-16"
             }`}
           />
-        )}
+        }
 
         {/* Main Content Area */}
-        <main
-          className={`flex-grow py-4 px-2 transition-all duration-300 ${
-            isMobile ? "ml-0" : isSidebarOpen ? "ml-60" : "ml-16"
-          }`}
-        >
+        <main className={`flex-1 flex-col w-full py-4 px-2 transition-all duration-300 ${isMobile ? "ml-0" : isSidebarOpen ? "ml-60" : "ml-16"}`}>
           <Toolbar /> {/* Ensures Navbar spacing */}
           {children}
         </main>
@@ -39,3 +35,4 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     </section>
   );
 }
+

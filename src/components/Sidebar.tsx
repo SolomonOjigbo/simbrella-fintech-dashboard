@@ -30,8 +30,8 @@ const Sidebar = ({
   const expandedWidth = "240px";
 
   const menuItems = [
-    { title: "Dashboard", icon: <DashboardOutlined />, link: "/" },
-    { title: "User Overview", icon: <People />, link: "/user-overview" },
+    
+    { title: "User Overview", icon: <People />, link: "/" },
     { title: "Loan Management", icon: <AccountBalance />, link: "/loan-management" },
     { title: "Transaction History", icon: <MonetizationOn />, link: "/transaction-history" },
   ];

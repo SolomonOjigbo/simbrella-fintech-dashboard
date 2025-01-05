@@ -85,11 +85,11 @@ const columns = useMemo<GridColDef[]>(
 
 
   return (
-    <div className="p-1 bg-white shadow rounded">
-      <h2 className="text-xl font-bold">All Transactions</h2>
+    <div className="p-1 bg-white shadow rounded ">
+     
       {/* {Transactions Table} */}
       
-<div style={{ width: '768px', height: "480px" }}>
+<div className="h-[640px] xl:w-full xs:w-[480px]">
         <DataGrid 
          rows={transactions}
         columns={columns}

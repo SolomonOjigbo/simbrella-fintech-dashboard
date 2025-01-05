@@ -4,6 +4,7 @@ import { fetchUserData, updateUserData } from '../services/api';
 interface User {
   id: number;
   name: string;
+  avatar: string;
   email: string;
   phone: string;
   accountBalance: number;
@@ -56,7 +57,7 @@ const userSlice = createSlice({
         state.status = 'failed';
         state.error = action.error.message || 'Failed to fetch user data.';
       })
-      // Handle postUser
+      // Handle updateUser
       .addCase(updateUser.pending, (state) => {
         state.status = 'loading';
         state.error = null;

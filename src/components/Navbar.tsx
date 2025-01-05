@@ -7,8 +7,9 @@ import {
   Menu,
   MenuItem,
   Typography,
+  InputBase,
 } from "@mui/material";
-import { Menu as MenuIcon } from "@mui/icons-material";
+import { Menu as MenuIcon, Search } from "@mui/icons-material";
 
 const Navbar = ({ onToggleSidebar }: { onToggleSidebar: () => void }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -43,6 +44,17 @@ const Navbar = ({ onToggleSidebar }: { onToggleSidebar: () => void }) => {
             <MenuIcon />
           </IconButton>
         </div>
+
+         {/* Center Section */}
+         <div className="hidden md:flex items-center justify-center">
+  <div className="relative flex">
+    <Search color="secondary" className="absolute left-3 top-1/2 -translate-y-1/2 " /> {/* Centering vertically */}
+    <input
+      placeholder="Search..."
+      className="ml-3 px-6 h-11 py-1 w-full rounded-sm bg-slate-50"
+    />
+  </div>
+</div>
 
         {/* Right Section */}
         <div className="flex items-center gap-4">

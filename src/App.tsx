@@ -20,8 +20,8 @@ const id = "1"
   return (
     <Router>
     <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/user-overview" element={<UserOverview/>} />
+   
+      <Route path="/" element={<UserOverview/>} />
       <Route path="/loan-management" element={<LoanManagement />} />
       <Route path="/transaction-history" element={<TransactionHistory />} />
       <Route path="*" element={<NotFound />} />
