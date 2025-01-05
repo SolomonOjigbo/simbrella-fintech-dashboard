@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -7,7 +7,6 @@ import {
   Menu,
   MenuItem,
   Typography,
-  InputBase,
 } from "@mui/material";
 import { Menu as MenuIcon, Search } from "@mui/icons-material";
 

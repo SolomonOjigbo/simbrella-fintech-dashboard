@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const LoanRequestForm = () => {
   const [loanDetails, setLoanDetails] = useState({ amount: 0, tenure: 0, purpose: "" });

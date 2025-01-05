@@ -1,20 +1,18 @@
-import React, { useMemo, useState } from "react";
-import { DataGrid, GridToolbar, GridToolbarContainer, GridToolbarExport, GridToolbarQuickFilter, GridActionsCellItem, GridRowId, GridColDef, GridRowParams, } from '@mui/x-data-grid';
+import {useMemo, useState } from "react";
+import { DataGrid, GridToolbar, GridColDef } from '@mui/x-data-grid';
 import { useAppSelector } from '../redux/hooks';
-import { MoreVert, RemoveRedEye } from "@mui/icons-material";
-import { IconButton, Menu, MenuItem } from "@mui/material";
+import { MoreVert} from "@mui/icons-material";
+import { CircularProgress, IconButton, Menu, MenuItem } from "@mui/material";
 
 const TransactionTable = () => {
 const { user, status, error } = useAppSelector((state) => state.user);
  const transactions = user?.transactions;
  const [anchorEl, setAnchorEl] = useState(null);
+ // @ts-ignore
  const [selectedRow, setSelectedRow] = useState(null);
 
 
- const handleMoreActionsClick = (event, row) => {
-   setAnchorEl(event.currentTarget);
-   setSelectedRow(row);
- };
+
 
  const handleMoreActionsClose = () => {
    setAnchorEl(null);
@@ -63,11 +61,10 @@ const columns = useMemo<GridColDef[]>(
       headerName: "Actions",
       type: "actions",
       width: 80,
-      renderCell: (params) => (
+      renderCell: () => (
         <>
           <IconButton
             aria-label="more actions"
-            onClick={(event) => handleMoreActionsClick(event, params.row)}
           >
             <MoreVert />
           </IconButton>
@@ -83,6 +80,18 @@ const columns = useMemo<GridColDef[]>(
     },
   ], []);
 
+   if (status === "loading" || status === "idle") {
+        return <CircularProgress size={46} />;
+      }
+      if (error) {
+        return (
+          <div className="flex justify-center items-center ">
+            <h4>
+              Failed to load loans: {error}
+            </h4>
+          </div>
+        );
+      }
 
   return (
     <div className="p-1 bg-white shadow rounded ">

@@ -4,18 +4,16 @@ import {
   ListItemIcon,
   ListItemText,
   Drawer,
-  IconButton,
   Toolbar,
-  Typography,
 } from "@mui/material";
 import {
   People,
   MonetizationOn,
   AccountBalance,
-  DashboardOutlined,
+
 } from "@mui/icons-material";
 import { Link } from "react-router-dom"; // Import Link for navigation
-import { useState } from "react";
+
 
 const Sidebar = ({
   isOpen,

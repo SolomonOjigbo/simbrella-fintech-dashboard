@@ -1,11 +1,11 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { DataGrid, GridToolbar, GridColDef } from '@mui/x-data-grid';
 import { useAppSelector } from '../redux/hooks';
 import { CircularProgress, Box, Typography } from '@mui/material';
 
 const LoansTable = () => {
     const { user, status, error } = useAppSelector((state) => state.user);
-    const loans = user?.loans || []; // Ensure loans is always an array
+    const loans = user?.loans || []; 
   
     const columns = useMemo<GridColDef[]>(
       () => [
@@ -21,6 +21,16 @@ const LoansTable = () => {
     if (status === "loading" || status === "idle") {
       return <CircularProgress size={46} />;
     }
+
+    if (error) {
+        return (
+          <Box textAlign="center" padding="16px">
+            <Typography variant="h6" color="error">
+              Failed to load loans: {error}
+            </Typography>
+          </Box>
+        );
+      }
   
     return (
       <div style={{ width: "768px", height: "480px" }}>

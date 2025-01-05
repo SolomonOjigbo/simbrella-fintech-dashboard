@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import DashboardLayout from "../layouts/DashboardLayout";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { Button, Modal, TextField, Typography } from "@mui/material";
@@ -37,8 +37,9 @@ const LoanManagement = () => {
     const updatedUser = { ...user, loans: updatedLoans };
 
     dispatch(updateUser(updatedUser));
-    setIsOpen(false); // Close the modal on successful submission
-    setLoanDetails({ tenure: "", amount: 0, purpose: "", startDate: "", status: "active" }); // Reset form
+    setIsOpen(false); 
+    setLoanDetails({ id: 0, tenure: "", amount: 0, purpose: "", startDate: "", status: "active" });
+
   };
 
   return (

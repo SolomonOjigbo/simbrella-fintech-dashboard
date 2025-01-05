@@ -1,16 +1,16 @@
 import { useAppSelector } from "../redux/hooks";
-import { Box, Card, styled, Avatar, Typography, Icon } from "@mui/material";
+import {  Typography } from "@mui/material";
 import DashboardLayout from "../layouts/DashboardLayout";
-import { AccountBalance, Email, Phone, PhoneAndroidOutlined } from "@mui/icons-material";
+import { AccountBalance, Email, Phone} from "@mui/icons-material";
 import TransactionTable from "../components/TransactionTable";
 
-const ContentWrapper = ({ children }) => (
-  <div className="relative z-50 p-6"> 
+const ContentWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <div className="relative z-50 p-6">
     {children}
   </div>
 );
 
-const CoverPicWrapper = ({ children }) => (
+const CoverPicWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div className="absolute top-0 left-0 w-screen xs:w-full h-[225px]">
     {children}
   </div>

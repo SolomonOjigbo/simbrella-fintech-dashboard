@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import LoanManagement from './pages/LoanManagement';
 import TransactionHistory from './pages/TransactionHistory';
-import Dashboard from './pages/Dashboard';
 import UserOverview from './pages/UserOverview';
 import { fetchUser } from './redux/userSlice';
 import { useAppDispatch } from './redux/hooks';

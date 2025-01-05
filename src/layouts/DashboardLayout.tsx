@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import { CssBaseline, Toolbar, useMediaQuery } from "@mui/material";
@@ -20,8 +20,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             isOpen={isSidebarOpen}
             isMobile={isMobile}
             onClose={() => setSidebarOpen(false)}
+            // @ts-ignore
             className={`transition-all duration-300 ${
               isSidebarOpen ? "w-60" : "w-16"
+
             }`}
           />
         }

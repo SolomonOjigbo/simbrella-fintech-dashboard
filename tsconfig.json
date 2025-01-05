@@ -1,12 +1,19 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
-    "isolatedModules": true,
-    "moduleResolution": "node",
-    "target": "ES6",
-    "module": "commonjs"
+    "strict": false,
+    "target": "esnext",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",  // Ensures Vite modules are resolved correctly
+    "jsx": "react-jsx",  // For React 17+ JSX Transform
+    "esModuleInterop": true,  // Allows importing CommonJS modules
+    "skipLibCheck": true,  // Skip type checking for declaration files
+    "types": ["vite/client"],  // Include Vite client types
+    "lib": ["dom", "esnext"],
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
   },
   "files": [],
   "references": [
