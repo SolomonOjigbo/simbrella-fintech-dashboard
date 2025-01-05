@@ -2,12 +2,12 @@
   "compilerOptions": {
     "strict": false,
     "target": "esnext",
-    "module": "NodeNext",
+    "module": "Nodenext",
     "moduleResolution": "nodenext",  // Ensures Vite modules are resolved correctly
     "jsx": "react-jsx",  // For React 17+ JSX Transform
     "esModuleInterop": true,  // Allows importing CommonJS modules
     "skipLibCheck": true,  // Skip type checking for declaration files
-    "types": ["vite/client"],  // Include Vite client types
+    "types": ["vite/client", "vitest/globals"],
     "lib": ["dom", "esnext"],
     "noImplicitAny": false,
     "noImplicitThis": false,
